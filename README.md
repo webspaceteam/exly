@@ -5,7 +5,7 @@
 </p>
 <h1 align="center">Exly</h1>  
 <p align="center">
-   by <a href="https://webspaceteam.com" target="_blank">WebspaceTeam</a>
+   by <a href="https://webspaceteam.com" target="_blank">WebspaceTeam</a> - custom software development company
 </p>
 
 > Express.js boilerplate with typescript (backend and frontend), handlebars, hot module reload, scss
@@ -24,7 +24,7 @@ $ npm run dev
 # build
 $ npm run build
 
-# run and endjoy!
+# run and enjoy the show!
 $ npm run start
 ```
 
