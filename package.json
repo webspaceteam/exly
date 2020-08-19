@@ -1,0 +1,73 @@
+{
+  "name": "Exly",
+  "version": "1.0.2",
+  "description": "Express.js boilerplate with typescript (backend and frontend), handlebars, hot module reload, scss",
+  "private": false,
+  "author": {
+    "name": "Webspace Team",
+    "email": "info@webspaceteam.com",
+    "url": "https://webspaceteam.com"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --exec ts-node src/index.ts && webpack-dev-server --config webpack.config.js",
+    "build": "npm run _:clean:dist && tsc && npm run _:copy:views && npm run _:clean:public && npm run _:frontend:build",
+    "start": "cross-env NODE_ENV=production node ./dist/index.js",
+    "_:clean:dist": "rimraf dist",
+    "_:clean:public": "rimraf public",
+    "_:copy:views": "cp -r src/views dist",
+    "_:frontend:build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index -g",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "npm run lint"
+    ]
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-handlebars": "^5.1.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.19",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
+    "css-url-relative-plugin": "^1.0.0",
+    "file-loader": "^6.0.0",
+    "husky": "^4.2.5",
+    "mini-css-extract-plugin": "^0.10.0",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.2",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^3.9.6",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-hot-middleware": "^2.25.0"
+  }
+}

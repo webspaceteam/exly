@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "./public",
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "target": "es5",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+    },
+    "include": ["src/assets/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+}
